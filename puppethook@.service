@@ -1,0 +1,13 @@
+[Unit]
+Description=Gitlab Webhook User Service by %i
+After=network.target
+
+[Service]
+Type=forking
+User=%i
+ExecStart=/usr/bin/screen -dmS gitlabweb /home/r10k/PuppetForeman/gitlab-webhook-r10k.py
+ExecStop=/usr/bin/screen -S gitlabweb -X quit
+
+[Install]
+WantedBy=multi-user.target
+
