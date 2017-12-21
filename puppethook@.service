@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=forking
 User=%i
-ExecStart=/usr/bin/screen -dmS gitlabweb /home/r10k/PuppetForeman/gitlab-webhook-r10k.py
+ExecStart=/usr/bin/screen -dmS gitlabweb /home/r10k/PuppetForeman/gitlab-webhook-r10k.py --port 8001
 ExecStop=/usr/bin/screen -S gitlabweb -X quit
 
 [Install]
